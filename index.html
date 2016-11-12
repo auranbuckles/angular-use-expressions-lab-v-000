@@ -14,7 +14,7 @@
     <div ng-app="app" class="app">
         <div ng-controller="EmailController as ctrl">
             <h4>Emails</h4>
-            <h6>You have emails!</h6>
+            <h6>You have {{ ctrl.emails.length === 0 && 'no' || ctrl.emails.length }} emails</h6>
 
             <ul>
                 <li ng-repeat="email in ctrl.emails">
@@ -33,3 +33,7 @@
 
 </body>
 </html>
+<!-- 
+In our <h6> tag we've got You have emails - let's make this more dynamic!
+Using our previous knowledge of ternary operators and displaying the length of an array, change the wording to put the number of emails in there. If there are no emails, we should put the word 'no' in there instead.
+You should end up with You have no emails or You have 6 emails - etc! -->
